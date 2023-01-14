@@ -9,7 +9,8 @@ import java.util.Collections;
 //        Output: 90, 50, 23
 public class Find3MaxElement {
     public static void main(String[] args) {
-      int arr[] = {10, 4, 3, 50, 23, 90};
+      //int arr[] = {10, 4, 3, 50, 23, 90};
+        int[] arr = { 12, 45, 1, -1, 45, 54, 23, 5, 0, -10 };
        int first, second, thrid;
        first = second = thrid = Integer.MIN_VALUE;
       if(arr.length < 3)
@@ -37,7 +38,7 @@ public class Find3MaxElement {
 
         //Using java 8
         System.out.println("Using java 8.");
-        Arrays.stream(arr).boxed().sorted(Collections.reverseOrder()).limit(3).forEach(System.out::println);
+        Arrays.stream(arr).boxed().sorted(Collections.reverseOrder()).distinct().limit(3).forEach(System.out::println);
 
     }
 }
