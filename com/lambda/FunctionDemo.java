@@ -4,8 +4,6 @@ package com.lambda;
 import java.util.function.Function;
 
 class FunctionImpl implements Function<String , Integer >{
-
-
     @Override
     public Integer apply(String s) {
         return s.length();
