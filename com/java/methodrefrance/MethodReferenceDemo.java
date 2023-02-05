@@ -1,5 +1,6 @@
 package com.java.methodrefrance;
 
+import java.util.*;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
@@ -58,7 +59,47 @@ public class MethodReferenceDemo {
         System.out.println(function3.apply("Chandan kumar"));
 
 
+        String[] strArray = {"a","b","z","x","b","n","m","p","o","i","u","l","k","h"};
+        //Using lambda
+        //Arrays.sort(strArray, (a, b) -> a.compareTo(b));
+        //Arrays.sort(strArray,(a , b) -> b.compareTo(a));
 
+        //Using method reference
+        Arrays.sort(strArray,String::compareToIgnoreCase);
+
+        //Arrays.sort(strArray);
+
+        for(String s : strArray ){
+            System.out.print(s + " ");
+        }
+
+        //Using method reference
+        Arrays.sort(strArray, Comparator.reverseOrder());
+        for(String s : strArray ){
+            System.out.print(s + " ");
+        }
+       // Reference to constructor
+
+        List<String> list = new ArrayList<>();
+        list.add("Kumar");
+        list.add("Kumar1");
+        list.add("Kumar2");
+        list.add("Kumar3");
+        list.add("Kumar4");
+        list.add("Kumar5");
+
+        //List to Set
+
+        Function<List<String>, Set<String>> function4 = (input) -> new HashSet<>(input);
+        System.out.println(function4.apply(list));
+
+        //Using method reference
+        Function<List<String>, Set<String>> function5 = HashSet::new;
+        System.out.println(function5.apply(list));
+
+
+        Function<List<String>, TreeSet<String>> function6 = TreeSet::new;
+        System.out.println(function6.apply(list));
 
 
 
