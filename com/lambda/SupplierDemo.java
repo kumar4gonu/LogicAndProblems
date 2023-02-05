@@ -1,6 +1,7 @@
 package com.lambda;
 
 
+import java.time.LocalDateTime;
 import java.util.function.Supplier;
 
 class SupplierImp implements Supplier<String>{
@@ -22,6 +23,9 @@ public class SupplierDemo {
 
         Supplier<String> supplier = () -> "Supplier Demo through Lambda expression";
         System.out.println(supplier.get());
+
+        Supplier<LocalDateTime> supplier1 = () -> LocalDateTime.now();
+        System.out.println(supplier1.get());
 
     }
 }
